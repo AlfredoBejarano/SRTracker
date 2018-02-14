@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">SR Tracker</string>
-    <string name="no_games_found">No matches found</string>
     <string name="hero_ana">Ana</string>
     <string name="hero_bastion">Bastion</string>
     <string name="hero_doomfist">Doomfist</string>
@@ -27,6 +25,8 @@
     <string name="hero_winston">Winston</string>
     <string name="hero_zarya">Zarya</string>
     <string name="hero_zenyatta">Zenyatta</string>
+    <string name="app_name">SR Tracker</string>
+    <string name="no_games_found">No matches found</string>
     <string name="choose_hero">Select a hero</string>
     <string name="map_name">map name</string>
     <string name="sr_after_game">Your SR after the match</string>
