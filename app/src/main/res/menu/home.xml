@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/add_game"
+        android:icon="@drawable/ic_add"
+        app:showAsAction="ifRoom"
+        android:title="@string/create_game" />
+
+    <item
+        app:showAsAction="ifRoom"
+        android:id="@+id/delete_game"
+        android:icon="@drawable/ic_delete"
+        android:title="@string/delete_all_games" />
+</menu>
