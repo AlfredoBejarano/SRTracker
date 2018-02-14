@@ -27,7 +27,7 @@ This project requires:
 This app runs in devices that meet the following requirements:
 
 #### Minimum Requirements
-- OS: Android 4.0.3 Ice Cream Sandwich 🍦 (_API 15_).
+- OS: Android 4.1 Ice Cream Sandwich 🍬 (_API 16_).
 - Memory: 32 MB.
 - Storage: 10 MB.
 - Processor: ARMv5 @ 200 MHz.
