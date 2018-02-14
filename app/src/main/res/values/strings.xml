@@ -30,7 +30,7 @@
     <string name="choose_hero">Select a hero</string>
     <string name="map_name">map name</string>
     <string name="sr_after_game">Your SR after the match</string>
-    <string name="sr">SR</string>
+    <string name="sr" translatable="false">SR</string>
     <string name="save_game">Save match</string>
     <string name="create_game">Report a match</string>
     <string name="delete_all_games">Delete all matches</string>
@@ -38,8 +38,8 @@
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="multiple_heroes">Multiple Heroes</string>
-    <string name="match_sr">%1$d SR</string>
-    <string name="match_sr_difference">%1$d SR (%2$d SR)</string>
+    <string name="match_sr" translatable="false">%1$d SR</string>
+    <string name="match_sr_difference" translatable="false">%1$d SR (%2$d SR)</string>
     <string name="no_hero_selected">No hero selected</string>
     <string name="please_select_a_hero">Please select a hero</string>
     <string name="please_enter_a_map_name">Please enter a map name</string>

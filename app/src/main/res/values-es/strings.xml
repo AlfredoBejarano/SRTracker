@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="hero_ana">Ana</string>
+    <string name="hero_bastion">Bastion</string>
+    <string name="hero_doomfist">Doomfist</string>
+    <string name="hero_dva">D.va</string>
+    <string name="hero_genji">Genji</string>
+    <string name="hero_hanzo">Hanzo</string>
+    <string name="hero_junkrat">Junkrat</string>
+    <string name="hero_lucio">Lucio</string>
+    <string name="hero_mccree">McCree</string>
+    <string name="hero_mei">Mei</string>
+    <string name="hero_mercy">Mercy</string>
+    <string name="hero_moira">Moira</string>
+    <string name="hero_orisa">Orisa</string>
+    <string name="hero_pharah">Pharah</string>
+    <string name="hero_reaper">Reaper</string>
+    <string name="hero_reinhardt">Reinhardt</string>
+    <string name="hero_roadhog">Roadhog</string>
+    <string name="hero_soldier76">Soldier: 76</string>
+    <string name="hero_sombra">Sombra</string>
+    <string name="hero_symmetra">Symmetra</string>
+    <string name="hero_torbjorn">Torbjorn</string>
+    <string name="hero_tracer">Tracer</string>
+    <string name="hero_widowmaker">Widowmaker</string>
+    <string name="hero_winston">Winston</string>
+    <string name="hero_zarya">Zarya</string>
+    <string name="hero_zenyatta">Zenyatta</string>
+    <string name="no">no</string>
     <string name="app_name">SR Tracker</string>
     <string name="no_games_found">No se encontraron partidas</string>
     <string name="choose_hero">Escoge a tu héroe</string>
