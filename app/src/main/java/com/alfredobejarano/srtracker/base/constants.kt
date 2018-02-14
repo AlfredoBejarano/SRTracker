@@ -9,6 +9,8 @@ import com.alfredobejarano.srtracker.R
  * @version 1.0
  * @since 2018-02-11
  */
+const val MIN_SR = 0
+const val MAX_SR = 5000
 const val HEROES = 26 // Defines how many heroes are in the game.
 const val HERO_ANA = 0
 const val HERO_BASTION = 1

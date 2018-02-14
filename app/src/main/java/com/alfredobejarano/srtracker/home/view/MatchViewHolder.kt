@@ -17,7 +17,7 @@ import java.util.*
  * @version 1.0
  * @since 2018-02-11
  */
-class GameViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val srField: TextView = itemView.findViewById(R.id.gm_sr)
     private val mapField: TextView = itemView.findViewById(R.id.gm_map)
     private val heroIcon: ImageView = itemView.findViewById(R.id.gm_hero)

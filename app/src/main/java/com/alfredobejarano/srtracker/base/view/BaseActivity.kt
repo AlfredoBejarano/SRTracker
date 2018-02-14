@@ -74,7 +74,7 @@ abstract class BaseActivity<in DTO> : AppCompatActivity(), BaseView<DTO> {
     }
 
     /**
-     * Displays a Toast to the user with a text.
+     * Displays a Snackbar to the user with a text.
      *
      * @param message Text for the toast.
      */
