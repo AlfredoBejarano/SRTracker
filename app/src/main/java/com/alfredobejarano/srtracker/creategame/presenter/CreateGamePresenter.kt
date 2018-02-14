@@ -1,5 +1,8 @@
 package com.alfredobejarano.srtracker.creategame.presenter
 
+import com.alfredobejarano.srtracker.R
+import com.alfredobejarano.srtracker.base.MAX_SR
+import com.alfredobejarano.srtracker.base.MIN_SR
 import com.alfredobejarano.srtracker.base.model.Match
 import com.alfredobejarano.srtracker.base.presenter.BasePresenter
 import com.alfredobejarano.srtracker.base.view.BaseView
@@ -21,8 +24,13 @@ class CreateGamePresenter(view: BaseView<Unit>) : BasePresenter<Unit>(view) {
      */
     fun storeMatch(match: Match) {
         view.displayLoadingView(displayView = true)
-        this.match = match
-        performDatabaseQuery()
+        val errorCode = validateMatchData(match = match)
+        if (errorCode == 0) {
+            this.match = match
+            performDatabaseQuery()
+        } else {
+            view.displayError(errorCode)
+        }
     }
 
     /**
@@ -43,5 +51,19 @@ class CreateGamePresenter(view: BaseView<Unit>) : BasePresenter<Unit>(view) {
     fun getDate(): String {
         val calendar = Calendar.getInstance()
         return "${calendar.get(Calendar.DAY_OF_MONTH)}-${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)} ${calendar.get(Calendar.HOUR_OF_DAY)}:${calendar.get(Calendar.MINUTE)}"
+    }
+
+    /**
+     * Checks that the values introduced for storing
+     * a match are correct.
+     */
+    private fun validateMatchData(match: Match): Int {
+        return when {
+            match.heroes.isEmpty() -> R.string.please_select_a_hero
+            match.map.isBlank() -> R.string.please_enter_a_map_name
+            match.sr < MIN_SR -> R.string.your_sr_cant_be_below_zero
+            match.sr > MAX_SR -> R.string.your_sr_cant_be_above_five_thounsand
+            else -> 0
+        }
     }
 }

@@ -22,7 +22,7 @@ import com.alfredobejarano.srtracker.base.HERO_ICONS
  */
 class HeroPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrollView(context, attributeSet) {
     var selectedHeroes: MutableList<Int> = mutableListOf()
-    private var heroChangedListener: OnHeroChangedListener? = null
+    var heroChangedListener: OnHeroChangedListener? = null
 
     init {
         LayoutInflater.from(context).inflate(R.layout.view_hero_picker, this, true)
@@ -43,7 +43,7 @@ class HeroPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrol
      * @return ImageView with the heroes icon.
      */
     private fun buildHeroImageView(position: Int): ImageView {
-        val padding = getDP(int = 8)
+        val padding = getDP(int = 8) // Padding value for the image view.
         val hero = ImageView(context) // ImageView for the heroes.
         val imageParams = LayoutParams(getDP(int = 48), getDP(int = 48)) // Set the size of the image to 24 dp.
         imageParams.setMargins(getDP(int = 8), getDP(int = 8), getDP(int = 8), getDP(int = 8)) // Set the margins of the image to 4dp.
@@ -63,9 +63,6 @@ class HeroPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrol
      * Selects a heroes in the given heroId and un-selects the rest.
      */
     private fun selectHero(heroId: Int) {
-        if (heroChangedListener != null) {
-            heroChangedListener!!.onHeroChanged(selectedHeroes) // Report the heroes changed to the listener if not null.
-        }
         val heroContainer = (getChildAt(0) as HorizontalScrollView).getChildAt(0) as LinearLayout // Get the heroes container.
         var hero: ImageView
         for (i in 0 until heroContainer.childCount) { // iterate through all the hero items to add / remove one from the list.
@@ -79,6 +76,9 @@ class HeroPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrol
                     hero.setBackgroundResource(R.drawable.bk_hero_icon_selected) // Change the background of the selected heroes.
                 }
             }
+        }
+        if (heroChangedListener != null) {
+            heroChangedListener!!.onHeroChanged(selectedHeroes) // Report the heroes changed to the listener if not null.
         }
     }
 

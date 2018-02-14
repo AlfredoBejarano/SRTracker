@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">SR Tracker</string>
-    <string name="no_games_found">No matches found</string>
     <string name="hero_ana">Ana</string>
     <string name="hero_bastion">Bastion</string>
     <string name="hero_doomfist">Doomfist</string>
@@ -27,17 +25,24 @@
     <string name="hero_winston">Winston</string>
     <string name="hero_zarya">Zarya</string>
     <string name="hero_zenyatta">Zenyatta</string>
+    <string name="app_name">SR Tracker</string>
+    <string name="no_games_found">No matches found</string>
     <string name="choose_hero">Select a hero</string>
     <string name="map_name">map name</string>
     <string name="sr_after_game">Your SR after the match</string>
-    <string name="sr">SR</string>
+    <string name="sr" translatable="false">SR</string>
     <string name="save_game">Save match</string>
-    <string name="create_game">Add a match</string>
+    <string name="create_game">Report a match</string>
     <string name="delete_all_games">Delete all matches</string>
     <string name="are_you_sure_to_delete_games">Are you sure you want to delete all your match records?</string>
     <string name="yes">yes</string>
     <string name="no">no</string>
     <string name="multiple_heroes">Multiple Heroes</string>
-    <string name="match_sr">%1$n SR</string>
-    <string name="match_sr_difference">%1$n SR (%1$n SR)</string>
+    <string name="match_sr" translatable="false">%1$d SR</string>
+    <string name="match_sr_difference" translatable="false">%1$d SR (%2$d SR)</string>
+    <string name="no_hero_selected">No hero selected</string>
+    <string name="please_select_a_hero">Please select a hero</string>
+    <string name="please_enter_a_map_name">Please enter a map name</string>
+    <string name="your_sr_cant_be_below_zero">Your SR can\'t be below 0! (you are not that bad, right?)</string>
+    <string name="your_sr_cant_be_above_five_thounsand">You SR can\'t be above 5000 (unless you are Ryujehong or play for London Spitfire)</string>
 </resources>

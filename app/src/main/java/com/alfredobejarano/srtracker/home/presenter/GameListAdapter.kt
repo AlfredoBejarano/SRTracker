@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.alfredobejarano.srtracker.R
 import com.alfredobejarano.srtracker.base.model.Match
-import com.alfredobejarano.srtracker.home.view.GameViewHolder
+import com.alfredobejarano.srtracker.home.view.MatchViewHolder
 
 /**
  * This class creates items from a game list and renders the data into them.
@@ -14,11 +14,11 @@ import com.alfredobejarano.srtracker.home.view.GameViewHolder
  * @version 1.0
  * @since 2018-02-11
  */
-class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<GameViewHolder>() {
+class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<MatchViewHolder>() {
     /**
      * Binds a created ViewHolder instance to the RecyclerView list.
      */
-    override fun onBindViewHolder(holder: GameViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: MatchViewHolder?, position: Int) {
         val prevGame = if (position - 1 <= 0) 0 else position - 1
         holder?.render(prevMatch = matches[prevGame], match = matches[position])
     }
@@ -27,7 +27,7 @@ class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<G
      * Creates a new ViewHolder item.
      * @return Created Match ViewHolder instance.
      */
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): GameViewHolder = GameViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_game, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MatchViewHolder = MatchViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_game, parent, false))
 
     /**
      * @return Quantity of view holder items to be created.
