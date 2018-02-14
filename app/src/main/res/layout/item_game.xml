@@ -16,9 +16,9 @@
         android:layout_marginBottom="4dp"
         android:layout_marginTop="4dp"
         android:adjustViewBounds="true"
-        android:padding="8dp"
         android:background="@drawable/bk_hero_icon"
         android:contentDescription="@string/app_name"
+        android:padding="8dp"
         android:src="@drawable/ic_ana"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,7 +42,7 @@
 
     <TextView
         android:id="@+id/gm_sr"
-        style="@style/sr_text_tie"
+        style="@style/sr_text"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
