@@ -1,5 +1,6 @@
 package com.alfredobejarano.srtracker.base
 
+import android.content.res.Resources
 import android.text.Editable
 
 /**
@@ -15,3 +16,9 @@ import android.text.Editable
  * @return a blank-safe value of an Editable.
  */
 fun safeString(text: Editable?) = if (text?.isBlank()!!) "0" else text.toString()
+
+/**
+ * @param value The DP quantity.
+ * @return the value of int as DP.
+ */
+fun getDP(value: Int, resources: Resources): Int = (value * resources.displayMetrics.density + 0.5f).toInt()
