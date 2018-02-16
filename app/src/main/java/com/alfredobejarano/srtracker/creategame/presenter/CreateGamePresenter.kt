@@ -46,11 +46,11 @@ class CreateGamePresenter(view: BaseView<Unit>) : BasePresenter<Unit>(view) {
 
     /**
      * Uses a Calendar instance to retrieve the current date.
-     * @return Current date as dd-mm-yy h:mm
+     * @return Current date as dd-MM-yyyy h:mm
      */
     fun getDate(): String {
         val calendar = Calendar.getInstance()
-        return "${calendar.get(Calendar.DAY_OF_MONTH)}-${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)} ${calendar.get(Calendar.HOUR_OF_DAY)}:${calendar.get(Calendar.MINUTE)}"
+        return "${calendar.get(Calendar.DAY_OF_MONTH)}-${calendar.get(Calendar.MONTH) + 1}-${calendar.get(Calendar.YEAR)} ${calendar.get(Calendar.HOUR_OF_DAY)}:${calendar.get(Calendar.MINUTE)}"
     }
 
     /**

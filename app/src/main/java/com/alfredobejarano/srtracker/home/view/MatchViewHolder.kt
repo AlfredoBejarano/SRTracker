@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.alfredobejarano.srtracker.R
 import com.alfredobejarano.srtracker.base.HERO_ICONS
 import com.alfredobejarano.srtracker.base.model.Match
+import java.text.SimpleDateFormat
 import java.util.*
 
 /**
@@ -21,6 +22,7 @@ class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val srField: TextView = itemView.findViewById(R.id.gm_sr)
     private val mapField: TextView = itemView.findViewById(R.id.gm_map)
     private val heroIcon: ImageView = itemView.findViewById(R.id.gm_hero)
+    private val dateField: TextView = itemView.findViewById(R.id.gm_date)
 
     /**
      * Renders the match data into the item.
@@ -37,5 +39,17 @@ class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             srField.setTextColor(color) // Set the text color for losing SR.
             srField.text = String.format(Locale.getDefault(), itemView.context.getString(R.string.match_sr_difference), match.sr, srDifference) // Draws the current SR and the SR difference.
         }
+
+        dateField.text = parseDate(date = match.date)// Draw the date.
+    }
+
+    /**
+     * Parses a date from dd-MM-yyyy H:mm format
+     * to MMMM, dd yyyy. h:mm a format.
+     */
+    private fun parseDate(date: String): String {
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy H:mm", Locale.getDefault())
+        val stringAsDate = dateFormat.parse(date)
+        return SimpleDateFormat("MMMM, dd yyyy. h:mm a", Locale.getDefault()).format(stringAsDate)
     }
 }

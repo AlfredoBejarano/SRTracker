@@ -28,23 +28,28 @@
 
     <TextView
         android:id="@+id/gm_map"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="56dp"
-        android:layout_marginStart="56dp"
-        android:textSize="18sp"
+        style="@style/map_text"
+        app:layout_constraintBottom_toTopOf="@id/gm_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gm_hero"
+        tools:text="Volskaya Industries" />
+
+    <TextView
+        android:id="@+id/gm_date"
+        style="@style/date_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Volskaya Industries" />
+        app:layout_constraintTop_toBottomOf="@id/gm_map"
+        tools:text="August 26, 2017" />
 
 
     <TextView
         android:id="@+id/gm_sr"
         style="@style/sr_text"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/gm_hero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="+46 SR" />

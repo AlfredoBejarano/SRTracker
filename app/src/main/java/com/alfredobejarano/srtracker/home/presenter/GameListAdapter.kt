@@ -27,7 +27,7 @@ class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<M
      * Creates a new ViewHolder item.
      * @return Created Match ViewHolder instance.
      */
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MatchViewHolder = MatchViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_game, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MatchViewHolder = MatchViewHolder(LayoutInflater.from(parent?.context).inflate(viewType, parent, false))
 
     /**
      * @return Quantity of view holder items to be created.
