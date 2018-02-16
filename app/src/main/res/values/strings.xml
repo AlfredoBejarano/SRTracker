@@ -45,4 +45,23 @@
     <string name="please_enter_a_map_name">Please enter a map name</string>
     <string name="your_sr_cant_be_below_zero">Your SR can\'t be below 0! (you are not that bad, right?)</string>
     <string name="your_sr_cant_be_above_five_thounsand">You SR can\'t be above 5000 (unless you are Ryujehong or play for London Spitfire)</string>
+    <string name="map_anubis">Temple of Anubis</string>
+    <string name="map_blizzard">Blizzardworld</string>
+    <string name="map_dorado">Dorado</string>
+    <string name="map_eichenwalde">Eichenwalde</string>
+    <string name="map_gibraltar">Watchpoint: Gibraltar</string>
+    <string name="map_hanamura">Hanamura</string>
+    <string name="map_hollywood">Hollywood</string>
+    <string name="map_horizon">Horizon Lunar Colony</string>
+    <string name="map_illios">Illios</string>
+    <string name="map_junkertown">Junkertown</string>
+    <string name="map_kingsrow">Kings Row</string>
+    <string name="map_lijiang">Lijiang Tower</string>
+    <string name="map_nepal">Nepal</string>
+    <string name="map_numbani">Numbani</string>
+    <string name="map_oasis">Oasis</string>
+    <string name="map_route66">Route 66</string>
+    <string name="map_volskaya">Volskaya Industries</string>
+    <string name="no_map_selected">No map selected</string>
+    <string name="choose_map">Choose a map</string>
 </resources>

@@ -46,11 +46,11 @@ class CreateGamePresenter(view: BaseView<Unit>) : BasePresenter<Unit>(view) {
 
     /**
      * Uses a Calendar instance to retrieve the current date.
-     * @return Current date as dd-mm-yy h:mm
+     * @return Current date as dd-MM-yyyy h:mm
      */
     fun getDate(): String {
         val calendar = Calendar.getInstance()
-        return "${calendar.get(Calendar.DAY_OF_MONTH)}-${calendar.get(Calendar.MONTH)}-${calendar.get(Calendar.YEAR)} ${calendar.get(Calendar.HOUR_OF_DAY)}:${calendar.get(Calendar.MINUTE)}"
+        return "${calendar.get(Calendar.DAY_OF_MONTH)}-${calendar.get(Calendar.MONTH) + 1}-${calendar.get(Calendar.YEAR)} ${calendar.get(Calendar.HOUR_OF_DAY)}:${calendar.get(Calendar.MINUTE)}"
     }
 
     /**
@@ -60,7 +60,6 @@ class CreateGamePresenter(view: BaseView<Unit>) : BasePresenter<Unit>(view) {
     private fun validateMatchData(match: Match): Int {
         return when {
             match.heroes.isEmpty() -> R.string.please_select_a_hero
-            match.map.isBlank() -> R.string.please_enter_a_map_name
             match.sr < MIN_SR -> R.string.your_sr_cant_be_below_zero
             match.sr > MAX_SR -> R.string.your_sr_cant_be_above_five_thounsand
             else -> 0
