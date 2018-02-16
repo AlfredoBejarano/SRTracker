@@ -13,11 +13,11 @@ import io.realm.RealmObject
  */
 open class Match() : RealmObject() {
     var sr = 0
-    var map = ""
+    var map = 0
     var heroes: RealmList<Int> = RealmList()
     var date = ""
 
-    constructor(sr: Int, hero: RealmList<Int>, map: String, date: String) : this() {
+    constructor(sr: Int, hero: RealmList<Int>, map: Int, date: String) : this() {
         this.sr = sr
         this.map = map
         this.heroes = hero

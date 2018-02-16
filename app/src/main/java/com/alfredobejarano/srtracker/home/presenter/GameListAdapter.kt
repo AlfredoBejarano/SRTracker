@@ -27,7 +27,7 @@ class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<M
      * Creates a new ViewHolder item.
      * @return Created Match ViewHolder instance.
      */
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MatchViewHolder = MatchViewHolder(LayoutInflater.from(parent?.context).inflate(viewType, parent, false))
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MatchViewHolder = MatchViewHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_game, parent, false))
 
     /**
      * @return Quantity of view holder items to be created.
@@ -42,10 +42,4 @@ class GameListAdapter(private var matches: List<Match>) : RecyclerView.Adapter<M
         this.matches = matches
         notifyDataSetChanged()
     }
-
-    /**
-     * Detects when a game is the last on the list so it
-     * can render the item without the separator line.
-     */
-    override fun getItemViewType(position: Int): Int = if (position == itemCount - 1) R.layout.item_game_last else R.layout.item_game
 }

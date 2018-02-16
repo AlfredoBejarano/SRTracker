@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import com.alfredobejarano.srtracker.R
 import com.alfredobejarano.srtracker.base.MAPS
+import com.alfredobejarano.srtracker.base.MAP_ANUBIS
+import com.alfredobejarano.srtracker.base.MAP_ICONS
 import com.alfredobejarano.srtracker.base.getDP
 
 /**
@@ -21,8 +23,8 @@ import com.alfredobejarano.srtracker.base.getDP
  * @since 2018-02-11
  */
 class MapPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrollView(context, attributeSet) {
-    private var selectedMap: Int = 0
-    var listener: OnMapChangedListener? = null
+    var selectedMap: Int = 0
+    var onMapChangedListener: OnMapChangedListener? = null
 
     init {
         LayoutInflater.from(context).inflate(R.layout.view_hero_picker, this, true)
@@ -43,8 +45,8 @@ class MapPicker(context: Context, attributeSet: AttributeSet) : HorizontalScroll
         mapIcon.layoutParams = imageParams // Set the layout params for the image view.
         mapIcon.setImageResource(R.drawable.bk_map) // Set the unselected drawable for the map.
         mapIcon.adjustViewBounds = true // Make the image resource adjust to the view size.
-        mapIcon.background = ContextCompat.getDrawable(context, R.drawable.bk_hero_icon) // Set the map icon in the background.
-        mapIcon.setOnClickListener { selectHero(position) } // Set the selected heroes when clicking the icon.
+        mapIcon.background = ContextCompat.getDrawable(context, MAP_ICONS[position]) // Set the map icon in the background.
+        mapIcon.setOnClickListener { selectMap(position) } // Set the selected heroes when clicking the icon.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mapIcon.elevation = getDP(value = 2, resources = resources).toFloat() // Set the heroes icon elevation in Lollipop and above devices.
         }
@@ -54,14 +56,20 @@ class MapPicker(context: Context, attributeSet: AttributeSet) : HorizontalScroll
     /**
      * Selects a heroes in the given heroId and un-selects the rest.
      */
-    private fun selectHero(mapId: Int) {
+    fun selectMap(mapId: Int) {
         val mapContainer = (getChildAt(0) as HorizontalScrollView).getChildAt(0) as LinearLayout // Get the map container.
         var mapIcon: ImageView
         for (i in 0 until mapContainer.childCount) { // iterate through all the map items to add / remove one from the list.
             mapIcon = mapContainer.getChildAt(i) as ImageView // Get the current map portrait.
+            if (i == mapId) {
+                mapIcon.setImageResource(R.drawable.bk_map_selected) // Set the selected foreground if the position matches an map Id.
+            } else {
+                mapIcon.setImageResource(R.drawable.bk_map) // Set the unselected foreground for the rest of images.
+            }
         }
-        if (listener != null) {
-            listener!!.onMapChanged(selectedMap) // Report the map changed to the listener if not null.
+        selectedMap = mapId // Update the selected map value.
+        if (onMapChangedListener != null) {
+            onMapChangedListener!!.onMapChanged(selectedMap) // Report the map changed to the onMapChangedListener if not null.
         }
     }
 

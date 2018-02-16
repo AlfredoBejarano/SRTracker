@@ -73,7 +73,7 @@ class HeroPicker(context: Context, attributeSet: AttributeSet) : HorizontalScrol
             }
         }
         if (heroChangedListener != null) {
-            heroChangedListener!!.onHeroChanged(selectedHeroes) // Report the heroes changed to the listener if not null.
+            heroChangedListener!!.onHeroChanged(selectedHeroes) // Report the heroes changed to the onMapChangedListener if not null.
         }
     }
 

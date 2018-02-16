@@ -37,7 +37,7 @@
     <string name="delete_all_games">Eliminar partidas</string>
     <string name="are_you_sure_to_delete_games">¿Estás seguro de eliminar todas tus partidas guardadas?</string>
     <string name="yes">si</string>
-    <string name="multiple_heroes">Héroes multiples</string>
+    <string name="multiple_heroes">Varios héroes</string>
     <string name="no_hero_selected">No se ha seleccionado ningún héroe</string>
     <string name="please_select_a_hero">Por favor selecciona un héroe</string>
     <string name="please_enter_a_map_name">Por favor escribe un mapa</string>
@@ -60,4 +60,6 @@
     <string name="map_oasis">Oasis</string>
     <string name="map_route66">Ruta 66</string>
     <string name="map_volskaya">Industrias Volskaya</string>
+    <string name="no_map_selected">No se ha seleccionado mapa</string>
+    <string name="choose_map">Elige un mapa</string>
 </resources>

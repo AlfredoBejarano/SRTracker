@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.alfredobejarano.srtracker.R
 import com.alfredobejarano.srtracker.base.HERO_ICONS
+import com.alfredobejarano.srtracker.base.MAP_ICONS
+import com.alfredobejarano.srtracker.base.MAP_NAMES
 import com.alfredobejarano.srtracker.base.model.Match
 import java.text.SimpleDateFormat
 import java.util.*
@@ -23,6 +25,7 @@ class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val mapField: TextView = itemView.findViewById(R.id.gm_map)
     private val heroIcon: ImageView = itemView.findViewById(R.id.gm_hero)
     private val dateField: TextView = itemView.findViewById(R.id.gm_date)
+    private val mapIcon: ImageView = itemView.findViewById(R.id.gm_map_icon)
 
     /**
      * Renders the match data into the item.
@@ -30,8 +33,8 @@ class MatchViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun render(prevMatch: Match, match: Match) {
         val srDifference = match.sr - prevMatch.sr // Difference between last and next prevMatch SR.
         val color = ContextCompat.getColor(itemView.context, if (srDifference > 0) R.color.colorGreen else R.color.colorRed) // Set the color depending if win or loss of SR.
-
-        mapField.text = match.map // Set the map name.
+        mapIcon.setImageResource(MAP_ICONS[match.map])
+        mapField.setText(MAP_NAMES[match.map]) // Set the map name.
         heroIcon.setImageResource(HERO_ICONS[match.heroes[0]!!]) // Set the heroes icon.
         if (srDifference == 0) {
             srField.text = String.format(Locale.getDefault(), itemView.context.getString(R.string.match_sr), match.sr) // Draw the SR if a match difference is zero.

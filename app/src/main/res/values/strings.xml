@@ -62,4 +62,6 @@
     <string name="map_oasis">Oasis</string>
     <string name="map_route66">Route 66</string>
     <string name="map_volskaya">Volskaya Industries</string>
+    <string name="no_map_selected">No map selected</string>
+    <string name="choose_map">Choose a map</string>
 </resources>

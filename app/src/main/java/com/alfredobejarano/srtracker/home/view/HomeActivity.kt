@@ -27,7 +27,7 @@ class HomeActivity : BaseActivity<MutableList<Match>>() {
     private val adapter = GameListAdapter(listOf())
 
     /**
-     * Sets listener and callbacks for views.
+     * Sets onMapChangedListener and callbacks for views.
      */
     override fun initializeView() {
         hm_game_list.layoutManager = LinearLayoutManager(this) // Sets a layout manager for the list.
